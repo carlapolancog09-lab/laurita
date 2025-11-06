@@ -1,0 +1,320 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(to bottom,  rgba(249,179,0,1) 0%,rgba(252,205,77,1) 37%,rgba(255,0,0,1) 90%); 
+}
+
+header .logo img {
+    width: 150px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+}
+
+header nav a:hover{
+
+color: #fff;
+
+}
+
+
+
+.header{
+    text-align: center;
+    font-size: 20px;
+}
+
+
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.hero a {
+    display: inline-block;
+    padding: 15px 30px;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: white;
+    background-color: #ffcc00;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+   
+}
+
+.hero a:hover {
+    background-color: #d1ccc2;
+}
+
+a {
+  transition: all 0.3s ease;
+}
+a:hover {
+  color: #fff;
+  background-color: #d1ccc2;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    background-color: #000;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Secciones principales */
+.about-container, .mission-container, .vision-container, .values-container, .more-info-container {
+    background: linear-gradient(to right, #111, #222);
+    color: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(255, 204, 0, 0.2);
+    max-width: 900px;
+    width: 100%;
+    margin-bottom: 25px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s;
+}
+
+/* Efecto hover de interactividad */
+.about-container:hover,
+.mission-container:hover,
+.vision-container:hover,
+.values-container:hover,
+.more-info-container:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(255, 204, 0, 0.4);
+    background: linear-gradient(to bottom right, #cc0000, #ffcc00);
+    color: #000;
+}
+
+/* Encabezados */
+.about-container h1, 
+.mission-container h2, 
+.vision-container h2, 
+.values-container h2, 
+.more-info-container h2 {
+    color: #ffcc00;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+/* Texto */
+.about-container p, 
+.mission-container p, 
+.vision-container p, 
+.values-container p, 
+.more-info-container p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #e0e0e0;
+}
+
+/* Lista de valores */
+.values-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+.values-container li {
+    margin: 10px 0;
+    background-color: rgba(255,255,255,0.1);
+    padding: 10px;
+    border-radius: 6px;
+    transition: background 0.3s;
+}
+
+.values-container li:hover {
+    background-color: rgba(255,204,0,0.2);
+    color: #fff;
+}
+
+/* Animación al aparecer */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.about-container, .mission-container, .vision-container, .values-container, .more-info-container {
+    animation: fadeIn 0.8s ease-in-out both;
+}
+
+/* Retraso escalonado */
+.about-container { animation-delay: 0.1s; }
+.mission-container { animation-delay: 0.2s; }
+.vision-container { animation-delay: 0.3s; }
+.values-container { animation-delay: 0.4s; }
+.more-info-container { animation-delay: 0.5s; }
+
+
+.productos {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #111; /* Fondo oscuro suave */
+}
+
+.productos h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #ffcc00; /* Amarillo McDonald’s */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Contenedor flexible y centrado */
+.producto-lista {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* Tarjetas de producto */
+.producto {
+    background: linear-gradient(to bottom, #000000 0%, #cc0000 50%, #000000 100%);
+    border-radius: 15px;
+    padding: 20px;
+    width: 280px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto al pasar el mouse */
+.producto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(255,204,0,0.3);
+}
+
+/* Imagen de producto */
+.producto img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+/* Pequeña animación en hover */
+.producto:hover img {
+    transform: scale(1.05);
+}
+
+/* Título */
+.producto h3 {
+    font-size: 20px;
+    color: #fff;
+    margin-top: 10px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+/* Descripción */
+.producto p {
+    font-size: 15px;
+    color: #ddd;
+}
+
+/* Ajuste adicional (por si hay productos extras) */
+@media (max-width: 768px) {
+    .producto-lista {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: auto;
+}
+
+
+footer {
+    background-color: #7b7b7b;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+}
+
+footer .social {
+    margin-top: 10px;
+}
+
+footer .social a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+footer .social img {
+    width: 24px;
+}

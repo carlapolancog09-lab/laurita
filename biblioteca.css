@@ -1,0 +1,72 @@
+/* --- Biblioteca Web General --- */
+/* Animaciones, botones y efectos globales */
+
+:root {
+  --color-principal: #ffcc00;
+  --color-secundario: #d40000;
+  --color-fondo: #1a1a1a;
+  --color-texto: #ffffff;
+}
+
+/* Efecto de aparición suave */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Botones globales */
+.btn {
+  display: inline-block;
+  background-color: var(--color-principal);
+  color: #000;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: var(--color-secundario);
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* Tarjetas con efecto hover */
+.card {
+  background-color: #222;
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 15px var(--color-principal);
+}
+
+/* Efecto de entrada para secciones */
+.section-animated {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.section-animated.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forulario</title>
+    <link rel="stylesheet" href="css mc/formu-mac.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+        <a href="index Mc.html"><img src="imag mc/logo.jpg" alt="McDonald's Logo"></a>
+    </div>
+    <nav>
+            <ul>
+                <li><a href="index Mc.html"><img src="imag mc/inicio1.png" alt="inicio" width="15px" height="15px">  Inicio</a></li>
+                <li><a href="producto mc.html"><img src="imag mc/Productos.png" alt="producto" width="15px" height="15px">  Productos</a></li>
+                <li><a href="ubic mac.html"><img src="imag mc/ubicacion.png" alt="ubicacion" width="15px" height="15px">Ubicacion</a></li>
+                <li><a href="formulario-mc.html"><img src="imag mc/contacto.png" alt="contacto" width="15px" height="15px">  Contacto</a></li>
+            </ul>
+        </nav>
+</header>
+
+  
+
+<main>
+  <section class="form-container">
+      <h1>Encuesta de Satisfacción del Cliente</h1>
+      <form id="surveyForm">
+          <div class="form-group">
+              <label for="name">Nombre:</label>
+              <input type="text" id="name" name="name" required>
+              <small class="error-message">Por favor ingresa tu nombre</small>
+          </div>
+          
+          <div class="form-group">
+              <label for="email">Correo Electrónico:</label>
+              <input type="email" id="email" name="email" required>
+              <small class="error-message">Correo no válido</small>
+          </div>
+          
+          <div class="form-group">
+              <label for="visit-date">Fecha de Visita:</label>
+              <input type="date" id="visit-date" name="visit-date" required>
+              <small class="error-message">Selecciona una fecha</small>
+          </div>
+          
+          <div class="form-group">
+              <label for="location">Ubicación del Restaurante:</label>
+              <select id="location" name="location" required>
+                  <option value="">Selecciona una ubicación</option>
+                  <option value="1">Charles de Gaulle</option>
+                  <option value="2">Megacentro</option>
+                  <option value="3">Maximo Gomez</option>
+                  <option value="4">Nuñez de caceres</option>
+                  <option value="5">Sirena Venezuela</option>
+              </select>
+              <small class="error-message">Selecciona una ubicación</small>
+          </div>
+          
+          <div class="form-group">
+              <label for="rating">Calificación del Servicio:</label>
+              <select id="rating" name="rating" required>
+                  <option value="">Selecciona una calificación</option>
+                  <option value="5">5 - Excelente</option>
+                  <option value="4">4 - Muy Bueno</option>
+                  <option value="3">3 - Bueno</option>
+                  <option value="2">2 - Regular</option>
+                  <option value="1">1 - Malo</option>
+              </select>
+              <small class="error-message">Selecciona una calificación</small>
+          </div>
+          
+          <div class="form-group">
+              <label for="comments">Comentarios:</label>
+              <textarea id="comments" name="comments" rows="4" required></textarea>
+              <small class="error-message">El comentario no puede estar vacío</small>
+          </div>
+          
+          <button type="submit" class="submit-button">Enviar</button>
+      </form>
+      <div class="form-feedback" id="formFeedback">¡Gracias! Tu encuesta ha sido enviada.</div>
+  </section>
+</main>
+
+
+    <footer>
+      <p>&copy; 2024 McDonald's. Todos los derechos reservados.</p>
+      <div class="social">
+           
+        <a href="https://www.facebook.com/McDonaldsRD/?locale=es_LA"><img src="imag mc/facebook.png" alt="Facebook"></a>
+        <a href="https://www.instagram.com/mcdonaldsrd/?hl=es"><img src="imag mc/instagram.png" alt="Instagram"></a>
+        <a href="https://x.com/McDonalds?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor&mx=2"><img src="imag mc/logotipos.png" alt="Twitter"></a>
+      </div>
+    </footer>
+   
+    <script>
+  const surveyForm = document.querySelector('form');
+  const feedback = document.querySelector('.form-feedback');
+
+  surveyForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      let valid = true;
+      const fields = ['name','email','visit-date','location','rating','comments'];
+
+      fields.forEach(id => {
+          const input = document.getElementById(id);
+          const error = input.nextElementSibling;
+          if(input.value.trim() === '' || (input.type === 'email' && !input.value.match(/^[^ ]+@[^ ]+\.[a-z]{2,3}$/))) {
+              error.style.display = 'block';
+              valid = false;
+              input.style.border = '2px solid #ff4d4d';
+          } else {
+              error.style.display = 'none';
+              input.style.border = '2px solid #00ff99';
+          }
+      });
+
+      if(valid) {
+          feedback.style.display = 'block';
+          surveyForm.reset();
+
+          setTimeout(() => {
+              feedback.style.display = 'none';
+              fields.forEach(id => document.getElementById(id).style.border = '1px solid #ccc');
+          }, 4000);
+      }
+  });
+</script>
+
+
+</body>
+</html>
